@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'https://static.cloudflareinsights.com'; style-src 'self' 'unsafe-inline';">
     <title>My Digital Portfolio</title>
     <style>
         /* Matrix-style theme */
@@ -55,11 +56,12 @@
 </head>
 <body>
     <nav>
-        <button class="nav-button" onclick="showPage('home')">Home</button>
-        <button class="nav-button" onclick="showPage('experience')">Experience</button>
-        <button class="nav-button" onclick="showPage('projects')">Projects</button>
-        <button class="nav-button" onclick="showPage('about')">About Me</button>
+        <button class="nav-button" id="homeBtn">Home</button>
+        <button class="nav-button" id="experienceBtn">Experience</button>
+        <button class="nav-button" id="projectsBtn">Projects</button>
+        <button class="nav-button" id="aboutBtn">About Me</button>
     </nav>
+
     <div id="home" class="container">
         <p><span class="blinking-cursor">>>: Welcome to my Portfolio</span></p>
     </div>
