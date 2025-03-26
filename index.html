@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Portfolio</title>
+    <style>
+        /* Matrix-style theme */
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: green;
+            text-align: center;
+        }
+        .container {
+            display: none;
+            padding: 50px;
+        }
+        #home {
+            display: block;
+            font-size: 2rem;
+            margin-top: 20vh;
+        }
+        #experience, #projects, #about {
+            font-size: 1.5rem;
+        }
+        nav {
+            background: gray;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .blinking-cursor::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button" onclick="showPage('home')">Home</button>
+        <button class="nav-button" onclick="showPage('experience')">Experience</button>
+        <button class="nav-button" onclick="showPage('projects')">Projects</button>
+        <button class="nav-button" onclick="showPage('about')">About Me</button>
+    </nav>
+    <div id="home" class="container">
+        <p><span class="blinking-cursor">Welcome to My Digital Portfolio</span></p>
+    </div>
+    <div id="experience" class="container">
+        <h2>Professional Experiences & Credentials</h2>
+        <p>Details about my career, certifications, and expertise.</p>
+    </div>
+    <div id="projects" class="container">
+        <h2>Websites Developed & Maintained</h2>
+        <p>Showcasing the web projects I have worked on.</p>
+    </div>
+    <div id="about" class="container">
+        <h2>About Me</h2>
+        <p>A brief introduction and background about myself.</p>
+    </div>
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.container').forEach(div => {
+                div.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
